@@ -1,6 +1,7 @@
 package io.swagger.petstore.TestBase;
 
 import io.restassured.RestAssured;
+import io.swagger.petstore.constants.Path;
 import io.swagger.petstore.utils.PropertyReader;
 import org.junit.BeforeClass;
 
@@ -14,5 +15,6 @@ public class TestBase
         propertyReader = PropertyReader.getInstance();
         RestAssured.baseURI = propertyReader.getProperty("baseUrl");
         RestAssured.port = Integer.parseInt(propertyReader.getProperty("port"));
+        RestAssured.basePath= Path.USERS;
     }
 }

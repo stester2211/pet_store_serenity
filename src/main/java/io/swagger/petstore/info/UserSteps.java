@@ -2,7 +2,6 @@ package io.swagger.petstore.info;
 
 import io.restassured.http.ContentType;
 import io.restassured.response.ValidatableResponse;
-import io.swagger.petstore.constants.Path;
 import io.swagger.petstore.models.UserPojo;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Step;
@@ -22,7 +21,7 @@ public class UserSteps
         userPojo.setUserStatus(userStatus);
 
         return SerenityRest.given().log().all()
-                .basePath(Path.USERS)
+                //.basePath(Path.USERS)
                 .contentType(ContentType.JSON)
                 .body(userPojo)
                 .when()
